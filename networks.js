@@ -59,3 +59,51 @@ exports.testnet = {
   ],
   defaultClientPort: 18333
 };
+
+exports.dcrdlivenet = {
+  name: 'dcrdlivenet',
+  magic: hex('f900b4d9'),
+  addressVersion: 0x0f21,
+  privKeyVersion: 0x230e,
+  P2SHVersion: 0x0efc,
+  hkeyPublicVersion: 0x043587d1,
+  hkeyPrivateVersion: 0x04358397,
+  genesisBlock: {
+    hash: hex('6982e4d78862ff8800404e116dd5f2cab6d4a33663e4de43e619d8f598a74056'), //
+    merkle_root: hex('4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b'),
+    height: 0,
+    nonce: 2083236893,
+    version: 1,
+    prev_hash: buffertools.fill(new Buffer(32), 0),
+    timestamp: 1296688602,
+    bits: "207ffffff",
+  },
+  dnsSeeds: [
+  ],
+  defaultClientPort: 9108
+};
+
+exports.dcrdtestnet = {
+  name: 'dcrdtestnet',
+  magic: hex('0b000907'),
+  addressVersion: 0x0f21,
+  privKeyVersion: 0x230e,
+  P2SHVersion: 0x0efc,
+  hkeyPublicVersion: 0x043587d1,
+  hkeyPrivateVersion: 0x04358397,
+  genesisBlock: {
+
+    hash: hex('5f3758be3cfe35880855d8cef0059ac5bd244ec5edaa329bdc9a73f6ed66745b'),
+    merkle_root: hex('a216ea043f0d481a072424af646787794c32bcefd3ed181a090319bbf8a37105'),
+    height: 0,
+    nonce: 414098458,
+    version: 1,
+    prev_hash: buffertools.fill(new Buffer(32), 0),
+    timestamp: 1296688602,
+    bits: "207ffffff",
+  },
+  dnsSeeds: [
+    "testnet-seed.decred.mindcry.org"
+  ],
+  defaultClientPort: 19108
+};

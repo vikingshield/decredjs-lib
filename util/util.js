@@ -1,4 +1,4 @@
-var crypto = require('crypto');
+var crypto = require('crypto-browserify');
 var bignum = require('bignum');
 var Binary = require('binary');
 var Put = require('bufferput');
@@ -7,6 +7,14 @@ var sjcl = require('../lib/sjcl');
 if (process.browser) {
   var hashjs = require('hash.js');
 }
+
+var blake256 = exports.blake256 = function(data) {
+  return crypto.createHash('blake256').update(data).digest();
+};
+
+var doubleblake256 = exports.doubleblake256 = function(data) {
+  return blake256(blake256(data));
+};
 
 var sha256 = exports.sha256 = function(data) {
   return new Buffer(crypto.createHash('sha256').update(data).digest('binary'), 'binary');
@@ -56,6 +64,10 @@ var twoSha256 = exports.twoSha256 = function(data) {
 
 var sha256ripe160 = exports.sha256ripe160 = function(data) {
   return ripe160(sha256(data));
+};
+
+var hash160 = exports.hash160 = function(data) {
+  return ripe160(blake256(data));
 };
 
 /**
