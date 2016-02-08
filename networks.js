@@ -63,13 +63,13 @@ exports.testnet = {
 exports.dcrdlivenet = {
   name: 'dcrdlivenet',
   magic: hex('f900b4d9'),
-  addressVersion: 0x0f21,
-  privKeyVersion: 0x230e,
-  P2SHVersion: 0x0efc,
-  hkeyPublicVersion: 0x043587d1,
-  hkeyPrivateVersion: 0x04358397,
+  addressVersion: 0x073f,
+  privKeyVersion: 0x22de,
+  P2SHVersion: 0x071a,
+  hkeyPublicVersion: 0x02fda926,
+  hkeyPrivateVersion: 0x02fda4e8,
   genesisBlock: {
-    hash: hex('6982e4d78862ff8800404e116dd5f2cab6d4a33663e4de43e619d8f598a74056'), //
+    hash: hex('80d9212bf4ceb066ded2866b39d4ed89e0ab60f335c11df8e7bf85d9c35c8e29'), //
     merkle_root: hex('4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b'),
     height: 0,
     nonce: 2083236893,
