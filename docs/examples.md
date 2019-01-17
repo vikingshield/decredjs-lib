@@ -70,7 +70,7 @@ var transaction = new Decred.Transaction()
   .from(utxo)
   .to('TcZzyn89mrSHUv5bxfkTan8VvQCxwkkSpFK', 10 * 1e8)
   .change(address.toString())
-  .addData('decred rocks')
+  .addData('Hello, Decred.') // OP_RETURN
   .sign(privateKey);
 
 console.log(transaction.serialize())

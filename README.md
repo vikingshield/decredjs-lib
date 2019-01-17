@@ -17,9 +17,13 @@ Decred is a powerful new peer-to-peer platform for the next generation of financ
 
 ## Get Started
 
+For nodejs:
+
 ```
 npm install decredjs-lib
 ```
+
+For browser please download [decredjs-lib.min.js](https://github.com/decredjs/decredjs-lib/blob/master-new/decredjs-lib.min.js) and see the [demo](https://github.com/decredjs/decredjs-lib/blob/master-new/examples/browser.html)
 
 ## Examples
 
@@ -27,27 +31,9 @@ npm install decredjs-lib
 * [Generate a address from a SHA256 hash](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#generate-a-address-from-a-sha256-hash)
 * [Import an address via WIF](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#import-an-address-via-wif)
 * [Create a Transaction](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#create-a-transaction)
-* [Sign a Decred message](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#sign-a-decred-message)
-* [Verify a Decred message](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#verify-a-decred-message)
 * [Create an OP RETURN transaction](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#create-an-op-return-transaction)
 * [Create a 2-of-3 multisig P2SH address](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#create-a-2-of-3-multisig-p2sh-address)
 * [Spend from a 2-of-2 multisig P2SH address](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#spend-from-a-2-of-2-multisig-p2sh-address)
-
-## Building the Browser Bundle
-
-To build a decredjs-lib full bundle for the browser:
-
-```sh
-gulp browser
-```
-
-This will generate files named `decredjs-lib.js` and `decredjs-lib.min.js`.
-
-You can also use our pre-generated files, provided for each release along with a PGP signature by one of the project's maintainers. To get them, checkout a release commit (for example, https://github.com/decredjs/decredjs-lib/commit/e33b6e3ba6a1e5830a079e02d949fce69ea33546 for v0.12.6).
-
-To verify signatures, use the following PGP keys:
-- @braydonf: https://pgp.mit.edu/pks/lookup?op=get&search=0x9BBF07CAC07A276D
-- @pnagurny: https://pgp.mit.edu/pks/lookup?op=get&search=0x0909B33F0AA53013
 
 ## Development & Tests
 
@@ -66,6 +52,21 @@ gulp test
 You can also run just the Node.js tests with `gulp test:node`, just the browser tests with `gulp test:browser`
 or create a test coverage report (you can open `coverage/lcov-report/index.html` to visualize it) with `gulp coverage`.
 
+## Building the Browser Bundle
+
+To build a decredjs-lib full bundle for the browser:
+
+```sh
+gulp browser
+```
+
+This will generate files named `decredjs-lib.js` and `decredjs-lib.min.js`.
+
+You can also use our pre-generated files, provided for each release along with a PGP signature by one of the project's maintainers. To get them, checkout a release commit (for example, https://github.com/decredjs/decredjs-lib/commit/e33b6e3ba6a1e5830a079e02d949fce69ea33546 for v0.12.6).
+
+To verify signatures, use the following PGP keys:
+- @braydonf: https://pgp.mit.edu/pks/lookup?op=get&search=0x9BBF07CAC07A276D
+- @pnagurny: https://pgp.mit.edu/pks/lookup?op=get&search=0x0909B33F0AA53013
 
 ## Contributing
 
