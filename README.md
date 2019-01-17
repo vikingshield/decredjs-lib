@@ -23,15 +23,15 @@ npm install decredjs-lib
 
 ## Examples
 
-* [Generate a random address](https://github.com/decredjs/decredjs-lib/blob/master/docs/examples.md#generate-a-random-address)
-* [Generate a address from a SHA256 hash](https://github.com/decredjs/decredjs-lib/blob/master/docs/examples.md#generate-a-address-from-a-sha256-hash)
-* [Import an address via WIF](https://github.com/decredjs/decredjs-lib/blob/master/docs/examples.md#import-an-address-via-wif)
-* [Create a Transaction](https://github.com/decredjs/decredjs-lib/blob/master/docs/examples.md#create-a-transaction)
-* [Sign a Decred message](https://github.com/decredjs/decredjs-lib/blob/master/docs/examples.md#sign-a-decred-message)
-* [Verify a Decred message](https://github.com/decredjs/decredjs-lib/blob/master/docs/examples.md#verify-a-decred-message)
-* [Create an OP RETURN transaction](https://github.com/decredjs/decredjs-lib/blob/master/docs/examples.md#create-an-op-return-transaction)
-* [Create a 2-of-3 multisig P2SH address](https://github.com/decredjs/decredjs-lib/blob/master/docs/examples.md#create-a-2-of-3-multisig-p2sh-address)
-* [Spend from a 2-of-2 multisig P2SH address](https://github.com/decredjs/decredjs-lib/blob/master/docs/examples.md#spend-from-a-2-of-2-multisig-p2sh-address)
+* [Generate a random address](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#generate-a-random-address)
+* [Generate a address from a SHA256 hash](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#generate-a-address-from-a-sha256-hash)
+* [Import an address via WIF](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#import-an-address-via-wif)
+* [Create a Transaction](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#create-a-transaction)
+* [Sign a Decred message](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#sign-a-decred-message)
+* [Verify a Decred message](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#verify-a-decred-message)
+* [Create an OP RETURN transaction](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#create-an-op-return-transaction)
+* [Create a 2-of-3 multisig P2SH address](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#create-a-2-of-3-multisig-p2sh-address)
+* [Spend from a 2-of-2 multisig P2SH address](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#spend-from-a-2-of-2-multisig-p2sh-address)
 
 ## Building the Browser Bundle
 
@@ -69,10 +69,10 @@ or create a test coverage report (you can open `coverage/lcov-report/index.html`
 
 ## Contributing
 
-Please send pull requests for bug fixes, code optimization, and ideas for improvement. For more information on how to contribute, please refer to our [CONTRIBUTING](https://github.com/decredjs/decredjs-lib/blob/master/CONTRIBUTING.md) file.
+Please send pull requests for bug fixes, code optimization, and ideas for improvement. For more information on how to contribute, please refer to our [CONTRIBUTING](https://github.com/decredjs/decredjs-lib/blob/master-new/CONTRIBUTING.md) file.
 
 
 ## License
 
-Code released under [the MIT license](https://github.com/decredjs/decredjs-lib/blob/master/LICENSE).
+Code released under [the MIT license](https://github.com/decredjs/decredjs-lib/blob/master-new/LICENSE).
 
