@@ -1,80 +1,80 @@
-# Bitcore examples
+# decredjs-lib examples
+
+```
+var Decred = require('decredjs-lib')
+```
 
 ## Generate a random address
-```javascript
-var privateKey = new bitcore.PrivateKey();
 
+```javascript
+// dcrdtestnet for default
+var privateKey = new Decred.PrivateKey(); // or new Decred.PrivateKey(null, 'dcrdtestnet');
 var address = privateKey.toAddress();
+
+// dcrdlivenet
+var privateKey = new Decred.PrivateKey(null, 'dcrdlivenet');
+var address = privateKey.toAddress();
+
+```
+
+## Export PrivateKey to Wif
+
+```javascript
+var privateKey = new Decred.PrivateKey();
+privateKey.toWIF()
 ```
 
 ## Generate a address from a SHA256 hash
 ```javascript
 var value = new Buffer('correct horse battery staple');
-var hash = bitcore.crypto.Hash.sha256(value);
-var bn = bitcore.crypto.BN.fromBuffer(hash);
+var hash = Decred.crypto.Hash.sha256(value);
+var bn = Decred.crypto.BN.fromBuffer(hash);
 
-var address = new bitcore.PrivateKey(bn).toAddress();
+var address = new Decred.PrivateKey(bn).toAddress();
 ```
 
 ## Import an address via WIF
 ```javascript
-var wif = 'Kxr9tQED9H44gCmp6HAdmemAzU3n84H3dGkuWTKvE23JgHMW8gct';
+var wif = 'AEQvtsoBwcyojhMdeC55Tm76dtZD4yVaZL7DdtrjGgVJt4T2umzA9';
 
-var address = new bitcore.PrivateKey(wif).toAddress();
+var address = new Decred.PrivateKey(wif).toAddress();
 ```
 
 ## Create a Transaction
-```javascript
-var privateKey = new bitcore.PrivateKey('L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy');
-var utxo = {
-  "txId" : "115e8f72f39fad874cfab0deed11a80f24f967a84079fb56ddf53ea02e308986",
-  "outputIndex" : 0,
-  "address" : "17XBj6iFEsf8kzDMGQk5ghZipxX49VXuaV",
-  "script" : "76a91447862fe165e6121af80d5dde1ecb478ed170565b88ac",
-  "atoms" : 50000
-};
 
-var transaction = new bitcore.Transaction()
+```javascript
+var wif = 'AERPtX9jCnwBECDhfGfJUVuzgAp9wnQSdtga8LGydNVesnjrqJhga';
+var privateKey = new Decred.PrivateKey(wif)
+var address = privateKey.toAddress();
+
+var utxo = {"address":"TsnA4r7sxpMnsVMHMiZnvcNTyneeFsz3GVF","txid":"a1fa70e9aa22e014743b1cda53551f44f5e4ef9038be3870087153720d3de943","vout":0,"scriptPubKey":"76a914e7daf0befc15b6207cb12ab6bbf354b379d3f43b88ac","height":107209,"amount":199.9999,"satoshis":19999990000,"confirmations":5}
+var transaction = new Decred.Transaction()
   .from(utxo)
-  .to('1Gokm82v6DmtwKEB8AiVhm82hyFSsEvBDK', 15000)
+  .to('TcZzyn89mrSHUv5bxfkTan8VvQCxwkkSpFK', 10 * 1e8)
+  .change(address.toString())
   .sign(privateKey);
+
+console.log(transaction.serialize())
+console.log(JSON.stringify(transaction.toJSON(), null, 4))
 ```
-
-## Sign a Bitcoin message
-```javascript
-var Message = require('bitcore-message');
-
-var privateKey = new bitcore.PrivateKey('L23PpjkBQqpAF4vbMHNfTZAb3KFPBSawQ7KinFTzz7dxq6TZX8UA');
-var message = new Message('This is an example of a signed message.');
-
-var signature = message.sign(privateKey);
-```
-
-## Verify a Bitcoin message
-```javascript
-var Message = require('bitcore-message');
-
-var address = '13Js7D3q4KvfSqgKN8LpNq57gcahrVc5JZ';
-var signature = 'IBOvIfsAs/da1e36W8kw1cQOPqPVXCW5zJgNQ5kI8m57FycZXdeFmeyoIqJSREzE4W7vfDmdmPk0HokuJPvgPPE=';
-
-var verified = new Message('This is an example of a signed message.').verify(address, signature);
- ```
 
 ## Create an OP RETURN transaction
-```javascript
-var privateKey = new bitcore.PrivateKey('L1uyy5qTuGrVXrmrsvHWHgVzW9kKdrp27wBC7Vs6nZDTF2BRUVwy');
-var utxo = {
-  "txId" : "115e8f72f39fad874cfab0deed11a80f24f967a84079fb56ddf53ea02e308986",
-  "outputIndex" : 0,
-  "address" : "17XBj6iFEsf8kzDMGQk5ghZipxX49VXuaV",
-  "script" : "76a91447862fe165e6121af80d5dde1ecb478ed170565b88ac",
-  "atoms" : 50000
-};
 
-var transaction = new bitcore.Transaction()
-    .from(utxo)
-    .addData('bitcore rocks') // Add OP_RETURN data
-    .sign(privateKey);
+```javascript
+var wif = 'AERPtX9jCnwBECDhfGfJUVuzgAp9wnQSdtga8LGydNVesnjrqJhga';
+var privateKey = new Decred.PrivateKey(wif)
+var address = privateKey.toAddress();
+
+var utxo = {"address":"TsnA4r7sxpMnsVMHMiZnvcNTyneeFsz3GVF","txid":"a1fa70e9aa22e014743b1cda53551f44f5e4ef9038be3870087153720d3de943","vout":0,"scriptPubKey":"76a914e7daf0befc15b6207cb12ab6bbf354b379d3f43b88ac","height":107209,"amount":199.9999,"satoshis":19999990000,"confirmations":5}
+var transaction = new Decred.Transaction()
+  .from(utxo)
+  .to('TcZzyn89mrSHUv5bxfkTan8VvQCxwkkSpFK', 10 * 1e8)
+  .change(address.toString())
+  .addData('decred rocks')
+  .sign(privateKey);
+
+console.log(transaction.serialize())
+console.log(JSON.stringify(transaction.toJSON(), null, 4))
 ```
 
 ## Create a 2-of-3 multisig P2SH address
@@ -86,28 +86,30 @@ var publicKeys = [
 ];
 var requiredSignatures = 2;
 
-var address = new bitcore.Address(publicKeys, requiredSignatures);
+var address = new Decred.Address(publicKeys, requiredSignatures);
 ```
 
 ## Spend from a 2-of-2 multisig P2SH address
 ```javascript
 var privateKeys = [
-  new bitcore.PrivateKey('91avARGdfge8E4tZfYLoxeJ5sGBdNJQH4kvjJoQFacbgwmaKkrx'),
-  new bitcore.PrivateKey('91avARGdfge8E4tZfYLoxeJ5sGBdNJQH4kvjJoQFacbgww7vXtT')
+  new Decred.PrivateKey('10c5a8d45bd94fa424fbd020b48b73b9e62bf663a46ef8689051b949583906ef'),
+  new Decred.PrivateKey('8a415ab2d8289e4a1db1b9eca59eee0336617da427e2a8815cce11b6d8a14120')
 ];
-var publicKeys = privateKeys.map(bitcore.PublicKey);
-var address = new bitcore.Address(publicKeys, 2); // 2 of 2
+var publicKeys = privateKeys.map(Decred.PublicKey);
+var address = new Decred.Address(publicKeys, 2); // 2 of 2
 
 var utxo = {
-  "txId" : "153068cdd81b73ec9d8dcce27f2c77ddda12dee3db424bff5cafdbe9f01c1756",
+  "txId" : "a1fa70e9aa22e014743b1cda53551f44f5e4ef9038be3870087153720d3de943",
   "outputIndex" : 0,
   "address" : address.toString(),
-  "script" : new bitcore.Script(address).toHex(),
+  "script" : new Decred.Script(address).toHex(),
   "atoms" : 20000
 };
 
-var transaction = new bitcore.Transaction()
+var transaction = new Decred.Transaction()
     .from(utxo, publicKeys, 2)
-    .to('mtoKs9V381UAhUia3d7Vb9GNak8Qvmcsme', 20000)
+    .to('TcZzyn89mrSHUv5bxfkTan8VvQCxwkkSpFK', 19000)
     .sign(privateKeys);
+    
+console.log(transaction.serialize())
 ```

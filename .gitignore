@@ -4,6 +4,7 @@ node_modules
 browser
 build
 docs/api
+/dev
 
 CONTRIBUTING.html
 LICENSE.html
