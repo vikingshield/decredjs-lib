@@ -2,7 +2,7 @@
   "name": "decredjs-lib",
   "version": "0.0.1",
   "description": "A pure and powerful JavaScript Decred library.",
-  "author": "BitPay <dev@bitpay.com>",
+  "author": "BitPay <dev@bitpay.com> & Decred Team & Life",
   "main": "index.js",
   "scripts": {
     "lint": "gulp lint",
@@ -54,6 +54,10 @@
     {
       "name": "Wei Lu",
       "email": "luwei.here@gmail.com"
+    },
+    {
+      "name": "Life",
+      "email": "lifephp@gmail.com"
     }
   ],
   "keywords": [
