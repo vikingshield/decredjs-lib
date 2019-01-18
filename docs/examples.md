@@ -113,3 +113,56 @@ var transaction = new Decred.Transaction()
     
 console.log(transaction.serialize())
 ```
+
+## Generate a random mnemonic
+
+```javascript
+var mn = new Decred.Mnemonic()
+var words = mn.toString()
+console.log(words)
+```
+
+## Create a BIP44, decred, account 0, external address from a random mnemonic
+
+```javascript
+var mn = new Decred.Mnemonic()
+var path = "m/44'/42'/0'/0/0"
+var child = mn.toHDPrivateKey('dcrdtestnet').derive(path)
+var data = {
+    path: path,
+    privateKey: child.privateKey.toString(),
+    publicKey: child.publicKey.toString(),
+    address: child.publicKey.toAddress().toString()
+}
+console.log(data)
+```
+
+## Export xPrivKey/xPubKey from mnemonic
+
+```javascript
+var words = 'stockman universe transit glossary beeswax pharmacy Christmas dictator crumpled visitor mural Atlantic drunken paragon tunnel telephone regain decimal waffle liberty uncut insurgent tycoon Virginia pupil company snapline corrosion stockman applicant village liberty scenic'
+var mn = new Decred.Mnemonic(words)
+var root = mn.toHDPrivateKey('dcrdlivenet')
+console.log(root.xprivkey) // dprv3hCznBesA6jBuNNdAXH3Zh2Egiqfg5RxBd1SSLULDJ6GrrHE2RGw7tCgD5Rdo3M6nkzd7gW8jHYPfYZywMCnaVnACdhkffWFU92phVHWM9k
+console.log(root.xpubkey) // dpubZ9169KDAEUnyonGPR3LQ5upVJjPw7222PAdmBFQhDNguaQJruNcYCTihMnXj8vUgeXvo5bbZavXxbZ8rgSsG2p9GBWd17SZRxhWFyu8KGsq
+```
+
+## Generate address by HDPrivateKey/HDPublicKey derive
+
+```javascript
+var xPrivKey = 'dprv3hCznBesA6jBuNNdAXH3Zh2Egiqfg5RxBd1SSLULDJ6GrrHE2RGw7tCgD5Rdo3M6nkzd7gW8jHYPfYZywMCnaVnACdhkffWFU92phVHWM9k'
+var basePath = "m/44'/42'/0'/0"
+var root2 = new Decred.HDPrivateKey(xPrivKey).derive(basePath)
+var root3 = new Decred.HDPublicKey(root2.xpubkey)
+var data = {
+    // "m/44'/42'/0'/0/0"
+    address: root2.derive(0).publicKey.toAddress().toString(), // get address by HDPrivateKey derive
+    // "m/44'/42'/0'/0/0"
+    address2: root3.derive(0).publicKey.toAddress().toString(), // get address by HDPublicKey derive
+    // "m/44'/42'/0'/0/1"
+    address3: root3.derive(1).publicKey.toAddress().toString(), // get address by HDPublicKey derive
+}
+console.log(data)
+```
+
+
