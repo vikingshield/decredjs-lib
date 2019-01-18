@@ -23,7 +23,7 @@ For nodejs:
 npm install decredjs-lib
 ```
 
-For browser please download [decredjs-lib.min.js](https://github.com/decredjs/decredjs-lib/blob/master-new/decredjs-lib.min.js) and see the [demo](https://github.com/decredjs/decredjs-lib/blob/master-new/examples/browser.html)
+For browser please download [decredjs-lib.min.js](https://github.com/decredjs/decredjs-lib/blob/master-new/decredjs-lib.min.js) and see the [demo](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/browser.md)
 
 ## Examples
 
