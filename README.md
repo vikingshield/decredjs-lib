@@ -76,6 +76,9 @@ To verify signatures, use the following PGP keys:
 
 Please send pull requests for bug fixes, code optimization, and ideas for improvement. For more information on how to contribute, please refer to our [CONTRIBUTING](https://github.com/decredjs/decredjs-lib/blob/master-new/CONTRIBUTING.md) file.
 
+## Who use decredjs-lib
+
+* [Dcr Dev Tool](http://dcr.ibitlin.com)
 
 ## License
 
