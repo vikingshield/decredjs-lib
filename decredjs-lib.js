@@ -5071,11 +5071,21 @@ Object.defineProperty(testnet, 'dnsSeeds', {
 addNetwork({
   name: 'dcrdlivenet',
   alias: 'dcrdlivenet',
-  pubkeyhash: 0x073f,
-  privatekey: 0x22de,
-  scripthash: 0x071a,
-  xpubkey: 0x02fda926,
-  xprivkey: 0x02fda4e8,
+
+  // params from https://github.com/decred/dcrd/blob/master/chaincfg/mainnetparams.go
+  pubkeyhash: 0x073f, // starts with Ds
+  privatekey: 0x22de, // starts with Pm
+  scripthash: 0x071a, // starts with Dc
+
+  // BIP32 hierarchical deterministic extended key magics
+  xpubkey: 0x02fda926, // starts with dpub
+  xprivkey: 0x02fda4e8, // starts with dprv
+
+  // BIP44 coin type used in the hierarchical deterministic path for
+  // address generation.
+  SLIP0044CoinType: 42, // SLIP0044, Decred
+  legacyCoinType: 20, // for backwards compatibility
+
   networkMagic: 0xf900b4d9,
   port: 9108,
   dnsSeeds: [
@@ -5085,11 +5095,21 @@ addNetwork({
 addNetwork({
   name: 'dcrdtestnet',
   alias: 'dcrdtestnet',
-  pubkeyhash: 0x0f21,
-  privatekey: 0x230e,
-  scripthash: 0x0efc,
-  xpubkey: 0x043587d1,
-  xprivkey: 0x04358397,
+
+  // params from https://github.com/decred/dcrd/blob/master/chaincfg/testnetparams.go
+  pubkeyhash: 0x0f21, // starts with Ts
+  privatekey: 0x230e, // starts with Pt
+  scripthash: 0x0efc, // starts with Tc
+
+  // BIP32 hierarchical deterministic extended key magics
+  xpubkey: 0x043587d1, // starts with tpub
+  xprivkey: 0x04358397, // starts with tprv
+
+  // BIP44 coin type used in the hierarchical deterministic path for
+  // address generation.
+  SLIP0044CoinType: 1,  // SLIP0044, Testnet (all coins)
+  legacyCoinType: 11, // for backwards compatibility
+
   networkMagic: 0x48e7a065,
   port: 19108,
   dnsSeeds: [
@@ -54737,7 +54757,7 @@ exports.createContext = Script.createContext = function (context) {
 },{}],215:[function(require,module,exports){
 module.exports={
   "name": "decredjs-lib",
-  "version": "0.1",
+  "version": "0.1.1",
   "description": "A pure and powerful JavaScript Decred library.",
   "author": "BitPay <dev@bitpay.com> & Decred Team & Life",
   "main": "index.js",
@@ -54864,9 +54884,9 @@ var bitcore = module.exports;
 bitcore.version = 'v' + require('./package.json').version;
 bitcore.versionGuard = function(version) {
   if (version !== undefined) {
-    var message = 'More than one instance of bitcore-lib found. ' + 
-      'Please make sure to require bitcore-lib and check that submodules do' +
-      ' not also include their own bitcore-lib dependency.';
+    var message = 'More than one instance of bitcorejs-lib found. ' + 
+      'Please make sure to require bitcorejs-lib and check that submodules do' +
+      ' not also include their own bitcorejs-lib dependency.';
     throw new Error(message);
   }
 };
