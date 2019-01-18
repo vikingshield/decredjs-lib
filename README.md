@@ -66,7 +66,7 @@ gulp browser
 
 This will generate files named `decredjs-lib.js` and `decredjs-lib.min.js`.
 
-You can also use our pre-generated files, provided for each release along with a PGP signature by one of the project's maintainers. To get them, checkout a release commit (for example, https://github.com/decredjs/decredjs-lib/commit/e33b6e3ba6a1e5830a079e02d949fce69ea33546 for v0.12.6).
+You can also use our pre-generated files, provided for each release along with a PGP signature by one of the project's maintainers. To get them, checkout a release commit (for example, https://github.com/decredjs/decredjs-lib/commit/ef6f5e955b19d67d7eab89b9a0e360a11db63ca1 for v0.0.2).
 
 To verify signatures, use the following PGP keys:
 - @braydonf: https://pgp.mit.edu/pks/lookup?op=get&search=0x9BBF07CAC07A276D
