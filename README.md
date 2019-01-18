@@ -34,6 +34,10 @@ For browser please download [decredjs-lib.min.js](https://github.com/decredjs/de
 * [Create an OP RETURN transaction](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#create-an-op-return-transaction)
 * [Create a 2-of-3 multisig P2SH address](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#create-a-2-of-3-multisig-p2sh-address)
 * [Spend from a 2-of-2 multisig P2SH address](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#spend-from-a-2-of-2-multisig-p2sh-address)
+* [Generate a random mnemonic](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#generate-a-random-mnemonic)
+* [Create a BIP44, decred, account 0, external address from a random mnemonic](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#create-a-bip44-decred-account-0-external-address-from-a-random-mnemonic)
+* [Export xPrivKey/xPubKey from mnemonic](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#export-xprivkeyxpubkey-from-mnemonic)
+* [Generate address by HDPrivateKey/HDPublicKey derive](https://github.com/decredjs/decredjs-lib/blob/master-new/docs/examples.md#generate-address-by-hdprivatekeyhdpublickey-derive)
 
 ## Development & Tests
 
