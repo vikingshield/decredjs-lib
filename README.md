@@ -78,7 +78,7 @@ Please send pull requests for bug fixes, code optimization, and ideas for improv
 
 ## Who use decredjs-lib
 
-* [Dcr Dev Tool](http://dcr.ibitlin.com)
+* [Dcr Dev Tool](http://ibitlin.com/dcrtool)
 
 ## License
 
